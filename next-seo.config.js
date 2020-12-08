@@ -1,7 +1,7 @@
 /**
  * * This file is a configuration file for the 'next-seo' plugin
  * README: https://tinyurl.com/y55lbgdh
- *
+ * blog-instructions: https://tinyurl.com/yy8wjlep
  */
 
 const BASE_URL = 'https://<site-path>.vercel.app';
