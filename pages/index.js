@@ -1,8 +1,8 @@
-import Head from 'next/head';
-// import { getContext } from '@/utils';
 import { Box, Flex } from '@chakra-ui/react';
 import useColor from '@/chakra/hooks/use-color';
 import { constants } from '@/chakra/structure/constants';
+
+import { DefaultSeo } from 'next-seo';
 
 const containerStyles = {
   p: [8, 12],
@@ -14,10 +14,7 @@ const Index = (props) => {
   const { color } = useColor();
   return (
     <>
-      {/* <Head>
-        <title key="title">{props.title}</title>
-        <link rel="icon" href="/favicon.ico/" />
-      </Head> */}
+      <DefaultSeo title={props.title} description={props.description}/>
       <Box mt={constants.headerHeight}>
         <p>Welcome</p>
       </Box>
@@ -27,19 +24,3 @@ const Index = (props) => {
 
 export default Index;
 
-// export async function getStaticProps() {
-//   const siteConfig = await import(`../data/config.json`);
-
-//   const allPages = getContext('../content/pages', false, /\.md$/);
-//   // console.log(sections)
-//   const pageSections = allPages[1].frontmatter;
-//   // const pageSections = allPages.map(page => page.slug === 'home' && page)
-//   return {
-//     props: {
-//       allPages,
-//       pageSections,
-//       title: siteConfig.default.title,
-//       description: siteConfig.default.description
-//     }
-//   };
-// }

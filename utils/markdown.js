@@ -42,3 +42,31 @@ export function getContext(dir, recursive = false, pattern) {
   })(require.context(dir, recursive, pattern))
   return ctx
 }
+
+
+/**
+ * * Usage
+ *
+
+ import { getMDContext } from '@/utils';
+
+ export async function getStaticProps() {
+  const siteConfig = await import(`../data/config.json`);
+
+* * Fix to only retrieve a single page at a time. (current will attempt to get all pages)
+  const allPages = getMDContext('../content/pages', false, /\.md$/);
+  // console.log(sections)
+  const pageSections = allPages[1].frontmatter;
+  // const pageSections = allPages.map(page => page.slug === 'home' && page)
+  return {
+    props: {
+      allPages,
+      pageSections,
+      title: siteConfig.default.title,
+      description: siteConfig.default.description
+    }
+  };
+}
+
+ *
+ */
