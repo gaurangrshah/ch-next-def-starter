@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Slide } from '@chakra-ui/react'
 
 import { Nav } from './nav'
 
-import { useNavDispatch } from '../contexts/nav-context'
+import { useNavDispatch } from '@/chakra/contexts/nav-context'
 
 export const Header = ({
   title,

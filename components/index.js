@@ -1,4 +1,4 @@
-export * from './carousel';
-export * from './movie-list';
+export * from './auth';
+export * from './custom-link';
 export * from './logo';
-export * from './side-menu';
+export * from './nprogress';

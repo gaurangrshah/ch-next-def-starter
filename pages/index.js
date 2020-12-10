@@ -1,21 +1,33 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Button, Container, Flex } from '@chakra-ui/react';
+
+import { borders, constants } from '@/chakra/structure/constants';
 import useColor from '@/chakra/hooks/use-color';
-import { constants } from '@/chakra/structure/constants';
+import { useAuth } from '../hooks/useAuth';
 
-
-const containerStyles = {
-  p: [8, 12],
-  borderRadius: '5px',
-  boxShadow: 'default'
-};
 
 const Index = (props) => {
   const { color } = useColor();
+    const { isAuthenticated, session, signOut } = useAuth();
+
   return (
     <>
-      <Box mt={constants.headerHeight}>
-        <p>Welcome</p>
-      </Box>
+      <Container layerStyle="responsive" border={borders.red}>
+        <Flex layerStyle="flexCenter" minH="20vh" mx={-5}>
+          <Box w="full" px={5} border={borders.purple}>
+            Side 1
+          </Box>
+          <Box w="full" px={5} border={borders.green}>
+            Side 2
+          </Box>
+        </Flex>
+        {isAuthenticated && (
+          <>
+            {`Signed in as ${session?.user.email}`}
+            <br />
+            <Button onClick={signOut}>Logout</Button>
+          </>
+        )}
+      </Container>
     </>
   );
 };

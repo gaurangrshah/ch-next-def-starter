@@ -13,3 +13,11 @@ export const constants = {
   bodyMax: ['540px', '720px', '960px', '1140px'],
   ...paddings,
 }
+
+export const borders = {
+  red: "1px solid red",
+  green: "1px solid green",
+  yellow: "1px solid yellow",
+  purple: "1px solid purple",
+  blue: "1px solid blue",
+}

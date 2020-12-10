@@ -1,14 +1,17 @@
 import React from 'react';
-import ToggleButton from '../../chakra/components/toggle-button';
+import { Button } from '@chakra-ui/react';
+import { useAuth } from '../../hooks/useAuth';
 
-const AuthButton = ({ isAuthenticated = false }) => {
-  return (
-    <ToggleButton
-      actions={[() => console.log('Logging Out'), () => console.log('Logging In')]}
-      condition={isAuthenticated}
-      labels={['Logout', 'Login']}
-    />
-  );
+export const AuthButton = () => {
+  const {isAuthenticated, signIn, signOut} = useAuth()
+
+  return !isAuthenticated ? (
+      <Button onClick={signIn}>{'Login'}</Button>
+    ) : (
+      <Button onClick={ signOut}>
+        {'Logout' }
+      </Button>
+    )
 };
 
-export default AuthButton;
+

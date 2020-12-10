@@ -1,24 +1,34 @@
-import React from 'react'
-import { Button } from '@chakra-ui/react'
+// import React, {useState, useEffect} from 'react'
+// import { Button } from '@chakra-ui/react'
 
-const ToggleButton = ({
-  actions,
-  condition,
-  labels,
-  variant = 'outline',
-  ...rest
-}) => {
-  return (
-    <Button
-      variant={variant}
-      onClick={() => console.log(condition ? actions[0]() : actions[1]())}
-      {...rest}
-    >
-      {condition ? labels[0] : labels[1]}
-    </Button>
-  )
-}
+// const ToggleButton = ({
+//   actions,
+//   condition,
+//   labels,
+//   variant = 'outline',
+//   ...rest
+// }) => {
 
-export default ToggleButton
+//   const [activated, setActivated] = useState(false)
 
-// TODO: create a ToggleLink with next/link
+//   useEffect(() => {
+//     condition ? setActivated(true) : setActivated(false)
+//     return () => {
+//       setActivated(false)
+//     }
+//   }, [condition])
+
+//   return (
+//     <Button
+//       variant={variant}
+//       onClick={activated ? actions[0]() : actions[1]()}
+//       {...rest}
+//     >
+//       {activated ? labels[0] : labels[1]}
+//     </Button>
+//   )
+// }
+
+// export default ToggleButton
+
+// // TODO: create a ToggleLink with next/link
